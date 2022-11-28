@@ -1,0 +1,26 @@
+<?xml-stylesheet href="/rss.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SC Site</title>
+    <link>https://sam33339999.github.io/</link>
+    <description>Recent content on SC Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 29 Nov 2022 01:05:56 +0800</lastBuildDate>
+    
+        <atom:link href="https://sam33339999.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>Get Started Hugo</title>
+        <link>https://sam33339999.github.io/posts/2022/11/get-started-hugo/</link>
+        <pubDate>Tue, 29 Nov 2022 01:05:56 +0800</pubDate>
+        
+        <guid>https://sam33339999.github.io/posts/2022/11/get-started-hugo/</guid>
+        <description>SC Site https://sam33339999.github.io/posts/2022/11/get-started-hugo/ -- https://sam33339999.github.io/posts/2022/11/get-started-hugo/ - </description>
+        </item>
+    
+    
+  </channel>
+</rss> 
