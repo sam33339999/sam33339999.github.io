@@ -13,8 +13,9 @@
       <pubDate>Tue, 29 Nov 2022 01:51:22 +0800</pubDate>
       
       <guid>https://sam33339999.github.io/posts/2022/11/kafka/</guid>
-      <description>歷史背景 LinkedIn 開發的 MQ 相關軟體。 基於 Java ，舊版本中依賴於 zookeeper
-官方網站、安裝方法 </description>
+      <description>歷史背景 LinkedIn 開發的 MQ 相關軟體。 基於 Java ，舊版本中依賴於 ZooKeeper
+在 2.8 版 (Early Access Release) 版本開始允許不使用 ZooKeeper(KRaft mode)
+官方網站、安裝方法 Offical 官方網站 Download 下載點 SDKMAN 用於下載 JDK 工具 </description>
     </item>
     
   </channel>
