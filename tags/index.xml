@@ -5,6 +5,43 @@
     <link>https://sam33339999.github.io/tags/</link>
     <description>Recent content in Tags on SC Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://sam33339999.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Tue, 29 Nov 2022 01:51:22 +0800</lastBuildDate><atom:link href="https://sam33339999.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kafka</title>
+      <link>https://sam33339999.github.io/tags/kafka/</link>
+      <pubDate>Tue, 29 Nov 2022 01:51:22 +0800</pubDate>
+      
+      <guid>https://sam33339999.github.io/tags/kafka/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MQ</title>
+      <link>https://sam33339999.github.io/tags/mq/</link>
+      <pubDate>Tue, 29 Nov 2022 01:51:22 +0800</pubDate>
+      
+      <guid>https://sam33339999.github.io/tags/mq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blog</title>
+      <link>https://sam33339999.github.io/tags/blog/</link>
+      <pubDate>Tue, 29 Nov 2022 01:05:56 +0800</pubDate>
+      
+      <guid>https://sam33339999.github.io/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tags</title>
+      <link>https://sam33339999.github.io/tags/tags/</link>
+      <pubDate>Tue, 29 Nov 2022 01:05:56 +0800</pubDate>
+      
+      <guid>https://sam33339999.github.io/tags/tags/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
