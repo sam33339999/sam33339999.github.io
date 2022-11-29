@@ -18,8 +18,7 @@
         <pubDate>Tue, 29 Nov 2022 01:51:22 +0800</pubDate>
         
         <guid>https://sam33339999.github.io/posts/2022/11/kafka/</guid>
-        <description>SC Site https://sam33339999.github.io/posts/2022/11/kafka/ -&lt;p&gt;{{ template &amp;ldquo;_internal/google_analytics_async.html&amp;rdquo; . }}&lt;/p&gt;
-&lt;h1 id=&#34;歷史背景&#34;&gt;歷史背景&lt;/h1&gt;
+        <description>SC Site https://sam33339999.github.io/posts/2022/11/kafka/ -&lt;h1 id=&#34;歷史背景&#34;&gt;歷史背景&lt;/h1&gt;
 &lt;p&gt;LinkedIn 開發的 MQ 相關軟體。 基於 &lt;code&gt;Java&lt;/code&gt; ，舊版本中依賴於 &lt;code&gt;ZooKeeper&lt;/code&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;在 &lt;code&gt;2.8&lt;/code&gt; 版 (Early Access Release) 版本開始允許不使用 &lt;code&gt;ZooKeeper&lt;/code&gt; (KRaft mode)，
@@ -31,25 +30,8 @@
 &lt;p&gt;KRaft 為共識算法。 以往 ZooKeeper 在 Kafka 中扮演協調代理的角色，當代理服務器啟動時，
 需要向 ZooKeeper 註冊，並由 ZooKeeper 管理代理狀態，協助代理間溝通的資訊同步，因此過去 Kafka 需依賴 ZooKeeper 才能運作。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h1 id=&#34;概論&#34;&gt;概論&lt;/h1&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;表头&lt;/th&gt;
-&lt;th&gt;表头&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;单元格&lt;/td&gt;
-&lt;td&gt;单元格&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;单元格&lt;/td&gt;
-&lt;td&gt;单元格&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
 &lt;h1 id=&#34;安裝&#34;&gt;安裝&lt;/h1&gt;
 &lt;h2 id=&#34;官方網站安裝方法&#34;&gt;官方網站、安裝方法&lt;/h2&gt;
 &lt;ul&gt;
@@ -186,9 +168,8 @@
         <pubDate>Tue, 29 Nov 2022 01:05:56 +0800</pubDate>
         
         <guid>https://sam33339999.github.io/posts/2022/11/get-started-hugo/</guid>
-        <description>SC Site https://sam33339999.github.io/posts/2022/11/get-started-hugo/ -&lt;p&gt;{{ template &amp;ldquo;_internal/google_analytics_async.html&amp;rdquo; . }}&lt;/p&gt;
-&lt;h1 id=&#34;開始使用-hugo-建立靜態網頁&#34;&gt;開始使用 Hugo 建立靜態網頁。&lt;/h1&gt;
-&lt;p&gt;佈景主題使用 &lt;code&gt;Diary&lt;/code&gt;&lt;/p&gt;
+        <description>SC Site https://sam33339999.github.io/posts/2022/11/get-started-hugo/ -&lt;h1 id=&#34;開始使用-hugo-建立靜態網頁&#34;&gt;開始使用 Hugo 建立靜態網頁。&lt;/h1&gt;
+&lt;p&gt;佈景主題使用 &lt;code&gt;Diary&lt;/code&gt; &lt;a href=&#34;https://github.com/AmazingRise/hugo-theme-diary&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;參考&#34;&gt;參考:&lt;/h2&gt;
 &lt;ul&gt;
@@ -235,7 +216,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;hr&gt;
-&lt;p&gt;TODO: Gitalk&lt;/p&gt;
+&lt;h2 id=&#34;發布文章&#34;&gt;發布文章&lt;/h2&gt;
+&lt;p&gt;往最上面的 md 看，請將 &lt;code&gt;draft&lt;/code&gt; 改成 &lt;code&gt;false&lt;/code&gt; ; 來取消草稿的 tag&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;TODO: Gitalk, 設定Ga, 留言區&lt;/p&gt;
 &lt;hr&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;

@@ -71,6 +71,23 @@
 
 
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="/vendor/js/md5.min.js"></script><script>
+  var gitalk = new Gitalk({
+  clientID: '9b6e2c60298010f8886d',
+  clientSecret: 'ceddaafab5d65f02a83f3a2228b447fd502ac1fd',
+  repo: 'git@github.com:sam33339999\/hugo-site.git',
+  owner: 'sam33339999',
+  admin: ['sam33339999'],
+  id: md5(location.pathname),
+  distractionFreeMode: 'false'
+  });
+  window.onload = function () {
+        gitalk.render('gitalk-container')
+  }
+</script>
+
 
 
 
@@ -218,24 +235,6 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 							
 								</ul>
 							
-						
-						
-						
-							<li>
-								<a href="#%e6%a6%82%e8%ab%96" onclick="onNavClick(`#概論-nav`)" id="概論-nav">
-									概論
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
 						
 						
 						
@@ -462,24 +461,6 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e6%a6%82%e8%ab%96" onclick="onNavClick(`#概論-nav`)" id="概論-nav">
-									概論
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
 								<a href="#%e5%ae%89%e8%a3%9d" onclick="onNavClick(`#安裝-nav`)" id="安裝-nav">
 									安裝
 								</a>
@@ -662,8 +643,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
                 <div class="post-body" v-pre>
                 
-                    <p>{{ template &ldquo;_internal/google_analytics_async.html&rdquo; . }}</p>
-<h1 id="歷史背景">歷史背景</h1>
+                    <h1 id="歷史背景">歷史背景</h1>
 <p>LinkedIn 開發的 MQ 相關軟體。 基於 <code>Java</code> ，舊版本中依賴於 <code>ZooKeeper</code></p>
 <blockquote>
 <p>在 <code>2.8</code> 版 (Early Access Release) 版本開始允許不使用 <code>ZooKeeper</code> (KRaft mode)，
@@ -675,25 +655,8 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 <p>KRaft 為共識算法。 以往 ZooKeeper 在 Kafka 中扮演協調代理的角色，當代理服務器啟動時，
 需要向 ZooKeeper 註冊，並由 ZooKeeper 管理代理狀態，協助代理間溝通的資訊同步，因此過去 Kafka 需依賴 ZooKeeper 才能運作。</p>
 </blockquote>
-<h1 id="概論">概論</h1>
-<table>
-<thead>
-<tr>
-<th>表头</th>
-<th>表头</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>单元格</td>
-<td>单元格</td>
-</tr>
-<tr>
-<td>单元格</td>
-<td>单元格</td>
-</tr>
-</tbody>
-</table>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h1 id="安裝">安裝</h1>
 <h2 id="官方網站安裝方法">官方網站、安裝方法</h2>
 <ul>
@@ -844,10 +807,18 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
             </nav>
             <div class="post-comment-wrapper">
                 
-                <p style="opacity: 0.6" align="center">
-                    <small>此篇文章的評論功能已經停用。</small>
-                </p>
-                
+
+
+<div id="gitalk-container"></div>
+
+
+
+
+
+
+
+
+
             </div>
         </div>
     </div>

@@ -71,6 +71,23 @@
 
 
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="/vendor/js/md5.min.js"></script><script>
+  var gitalk = new Gitalk({
+  clientID: '9b6e2c60298010f8886d',
+  clientSecret: 'ceddaafab5d65f02a83f3a2228b447fd502ac1fd',
+  repo: 'git@github.com:sam33339999\/hugo-site.git',
+  owner: 'sam33339999',
+  admin: ['sam33339999'],
+  id: md5(location.pathname),
+  distractionFreeMode: 'false'
+  });
+  window.onload = function () {
+        gitalk.render('gitalk-container')
+  }
+</script>
+
 
 
 
@@ -233,6 +250,28 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 					
 				
 			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e7%99%bc%e5%b8%83%e6%96%87%e7%ab%a0" onclick="onNavClick(`#發布文章-nav`)" id="發布文章-nav">
+									發布文章
+								</a>
+							</li>
+						
+						
+					
+				
+			
 		</ul>
 	</div>
 
@@ -373,6 +412,28 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 					
 				
 			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e7%99%bc%e5%b8%83%e6%96%87%e7%ab%a0" onclick="onNavClick(`#發布文章-nav`)" id="發布文章-nav">
+									發布文章
+								</a>
+							</li>
+						
+						
+					
+				
+			
 		</ul>
 	</div>
 
@@ -466,9 +527,8 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
                 <div class="post-body" v-pre>
                 
-                    <p>{{ template &ldquo;_internal/google_analytics_async.html&rdquo; . }}</p>
-<h1 id="開始使用-hugo-建立靜態網頁">開始使用 Hugo 建立靜態網頁。</h1>
-<p>佈景主題使用 <code>Diary</code></p>
+                    <h1 id="開始使用-hugo-建立靜態網頁">開始使用 Hugo 建立靜態網頁。</h1>
+<p>佈景主題使用 <code>Diary</code> <a href="https://github.com/AmazingRise/hugo-theme-diary">Github</a></p>
 <hr>
 <h2 id="參考">參考:</h2>
 <ul>
@@ -515,7 +575,10 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 </span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
-<p>TODO: Gitalk</p>
+<h2 id="發布文章">發布文章</h2>
+<p>往最上面的 md 看，請將 <code>draft</code> 改成 <code>false</code> ; 來取消草稿的 tag</p>
+<hr>
+<p>TODO: Gitalk, 設定Ga, 留言區</p>
 <hr>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -558,10 +621,18 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
             </nav>
             <div class="post-comment-wrapper">
                 
-                <p style="opacity: 0.6" align="center">
-                    <small>此篇文章的評論功能已經停用。</small>
-                </p>
-                
+
+
+<div id="gitalk-container"></div>
+
+
+
+
+
+
+
+
+
             </div>
         </div>
     </div>

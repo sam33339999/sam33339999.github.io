@@ -13,12 +13,11 @@
       <pubDate>Tue, 29 Nov 2022 01:51:22 +0800</pubDate>
       
       <guid>https://sam33339999.github.io/posts/2022/11/kafka/</guid>
-      <description>{{ template &amp;ldquo;_internal/google_analytics_async.html&amp;rdquo; . }}
-歷史背景 LinkedIn 開發的 MQ 相關軟體。 基於 Java ，舊版本中依賴於 ZooKeeper
+      <description>歷史背景 LinkedIn 開發的 MQ 相關軟體。 基於 Java ，舊版本中依賴於 ZooKeeper
 在 2.8 版 (Early Access Release) 版本開始允許不使用 ZooKeeper (KRaft mode)， 變成內建應用完成對 Zookeeper 的解依賴。
 延伸閱讀 Apache Kafka 3.0.0持續更新共識機制KRaft，並著手清理舊支援與設定
 KRaft 為共識算法。 以往 ZooKeeper 在 Kafka 中扮演協調代理的角色，當代理服務器啟動時， 需要向 ZooKeeper 註冊，並由 ZooKeeper 管理代理狀態，協助代理間溝通的資訊同步，因此過去 Kafka 需依賴 ZooKeeper 才能運作。
-概論 表头 表头 单元格 单元格 单元格 单元格 安裝 官方網站、安裝方法 Official 官方網站 Download 下載點 SDKMAN 用於下載 JDK 工具 安裝 Java 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 # 安裝 SDK MAN curl -s &amp;#34;https://get.</description>
+安裝 官方網站、安裝方法 Official 官方網站 Download 下載點 SDKMAN 用於下載 JDK 工具 安裝 Java 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 # 安裝 SDK MAN curl -s &amp;#34;https://get.</description>
     </item>
     
     <item>
@@ -27,8 +26,7 @@ KRaft 為共識算法。 以往 ZooKeeper 在 Kafka 中扮演協調代理的角�
       <pubDate>Tue, 29 Nov 2022 01:05:56 +0800</pubDate>
       
       <guid>https://sam33339999.github.io/posts/2022/11/get-started-hugo/</guid>
-      <description>{{ template &amp;ldquo;_internal/google_analytics_async.html&amp;rdquo; . }}
-開始使用 Hugo 建立靜態網頁。 佈景主題使用 Diary
+      <description>開始使用 Hugo 建立靜態網頁。 佈景主題使用 Diary Github
 參考: 搭建GithubPage博客 Hugo 教學 &amp;ndash; 基礎篇 Hugo 教學 &amp;ndash; 進階篇 自己的設定檔 config.toml 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 theme = &amp;#34;diary&amp;#34; # 這裡的 theme 會去查詢你目錄下的 themes 資料夾下面，是否有無相同名稱的資料夾，來當作佈景主題 [markup] [markup.highlight] codeFences = true # 程式碼圍欄 guessSyntax = true # 猜語法 hl_Lines = &amp;#34;&amp;#34; lineNoStart = 1 # 行數從 1 起算 lineNos = true # 是否顯示行號 lineNumbersInTable = true # 表格內是否顯示行號 # https://gohugo.</description>
     </item>
     
