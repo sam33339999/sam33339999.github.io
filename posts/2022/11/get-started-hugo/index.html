@@ -25,6 +25,23 @@
 
 
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GW4JPQ1TD8"></script>
+
+<script>
+
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('js', new Date());
+
+ 
+  gtag('config', 'G-GW4JPQ1TD8');
+
+</script>
+
+
+
 
 
   
@@ -449,7 +466,8 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
                 <div class="post-body" v-pre>
                 
-                    <h1 id="開始使用-hugo-建立靜態網頁">開始使用 Hugo 建立靜態網頁。</h1>
+                    <p>{{ template &ldquo;_internal/google_analytics_async.html&rdquo; . }}</p>
+<h1 id="開始使用-hugo-建立靜態網頁">開始使用 Hugo 建立靜態網頁。</h1>
 <p>佈景主題使用 <code>Diary</code></p>
 <hr>
 <h2 id="參考">參考:</h2>
@@ -479,7 +497,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#34;diary&#34;</span>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#34;diary&#34;</span> <span style="color:#75715e"># 這裡的 theme 會去查詢你目錄下的 themes 資料夾下面，是否有無相同名稱的資料夾，來當作佈景主題</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">markup</span>]
 </span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">highlight</span>]

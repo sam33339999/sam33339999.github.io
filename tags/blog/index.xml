@@ -13,8 +13,9 @@
       <pubDate>Tue, 29 Nov 2022 01:05:56 +0800</pubDate>
       
       <guid>https://sam33339999.github.io/posts/2022/11/get-started-hugo/</guid>
-      <description>開始使用 Hugo 建立靜態網頁。 佈景主題使用 Diary
-參考: 搭建GithubPage博客 Hugo 教學 &amp;ndash; 基礎篇 Hugo 教學 &amp;ndash; 進階篇 自己的設定檔 config.toml 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 theme = &amp;#34;diary&amp;#34; [markup] [markup.highlight] codeFences = true # 程式碼圍欄 guessSyntax = true # 猜語法 hl_Lines = &amp;#34;&amp;#34; lineNoStart = 1 # 行數從 1 起算 lineNos = true # 是否顯示行號 lineNumbersInTable = true # 表格內是否顯示行號 # https://gohugo.io/content-management/syntax-highlighting/ noClasses = true #style = &amp;#34;perldoc&amp;#34; # 原本的樣式，但是在深色模式下看不清楚 style = &amp;#34;monokai&amp;#34; # 程式碼區塊使用的 style tabWidth = 4 # 預設縮排為多少空白 TODO: Gitalk</description>
+      <description>{{ template &amp;ldquo;_internal/google_analytics_async.html&amp;rdquo; . }}
+開始使用 Hugo 建立靜態網頁。 佈景主題使用 Diary
+參考: 搭建GithubPage博客 Hugo 教學 &amp;ndash; 基礎篇 Hugo 教學 &amp;ndash; 進階篇 自己的設定檔 config.toml 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 theme = &amp;#34;diary&amp;#34; # 這裡的 theme 會去查詢你目錄下的 themes 資料夾下面，是否有無相同名稱的資料夾，來當作佈景主題 [markup] [markup.highlight] codeFences = true # 程式碼圍欄 guessSyntax = true # 猜語法 hl_Lines = &amp;#34;&amp;#34; lineNoStart = 1 # 行數從 1 起算 lineNos = true # 是否顯示行號 lineNumbersInTable = true # 表格內是否顯示行號 # https://gohugo.</description>
     </item>
     
   </channel>
