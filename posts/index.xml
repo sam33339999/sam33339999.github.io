@@ -6,7 +6,30 @@
     <description>Recent content in Posts on SC Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 29 Nov 2022 01:51:22 +0800</lastBuildDate><atom:link href="https://sam33339999.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Dec 2022 02:03:58 +0800</lastBuildDate><atom:link href="https://sam33339999.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PHP Closure Anonymous</title>
+      <link>https://sam33339999.github.io/posts/2022/12/php-closure-anonymous/</link>
+      <pubDate>Fri, 02 Dec 2022 02:03:58 +0800</pubDate>
+      
+      <guid>https://sam33339999.github.io/posts/2022/12/php-closure-anonymous/</guid>
+      <description>PHP Closure Anonymous PHP 閉包匿名類 匿名類別繼承，且 __construct() 初始化匿名函數
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 class TestAnonymous { public function __construct( protected string $name ) { /** PHP 8 Syntax, With Construct initial attributes */ } public function hello(): void { echo &amp;#34;Hello world - {$this-&amp;gt;name} \n&amp;#34;; } public function helloWithAnonymous() { $newClass = new Class(&amp;#39;Sunny&amp;#39;) extends TestAnonymous { public function hello(): void { parent::hello(); echo &amp;#34;Hello John - {$this-&amp;gt;name} \n&amp;#34;; } }; // 這裡記得要有分號。 $newClass-&amp;gt;hello(); } } $ta = new TestAnonymous(&amp;#39;Sam&amp;#39;); $ta-&amp;gt;hello(); $ta-&amp;gt;helloWithAnonymous(); </description>
+    </item>
+    
+    <item>
+      <title>Swoole Cli</title>
+      <link>https://sam33339999.github.io/posts/2022/12/swoole-cli/</link>
+      <pubDate>Fri, 02 Dec 2022 02:00:00 +0800</pubDate>
+      
+      <guid>https://sam33339999.github.io/posts/2022/12/swoole-cli/</guid>
+      <description>Swoole.com Swoole.com/download Swoole-cli segment fault Github-Repo-&amp;gt; swoole-cli Swoole-Cli 介紹 Swoole-Cli 是一個 PHP 的 binary 集成發行版，集成了 swoole, php kernel, php-cli, php-fpm 等等多個常用拓展。 Swoole-Cli 是全靜態編譯打包而成，不需要依賴任何的作業系統 so 動態鏈結庫；具有良好的移植性， 可以在任意 Linux 系統間複製。
+1 2 3 4 5 6 7 8 # 顯示版本 swoole-cli -v # 顯示當前模組 swoole-cli -m # 軟連結 -&amp;gt; php ln -s /usr/bin/swoole-cli /usr/bin/php 配置文件 swoole-cli 內建已經有集成 php-fpm 所以可以使用 -P 來啟動 fpm
+參數 -h 幫助
+-P 啟動 php-fpm
+-p 啟動 php-fpm 的進程管理器前綴名稱 -F, --nodaemonize -R, --allow-to-run-as-root -c 指定 php.</description>
+    </item>
+    
     <item>
       <title>Kafka - 1</title>
       <link>https://sam33339999.github.io/posts/2022/11/kafka/</link>
