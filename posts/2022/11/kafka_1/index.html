@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html><head>
+<title>Kafka - 1</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="kafka 筆記">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+
+
+
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GW4JPQ1TD8"></script>
+
+<script>
+
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('js', new Date());
+
+ 
+  gtag('config', 'G-GW4JPQ1TD8');
+
+</script>
+
+
+
+
+
+  
+
+
+
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<link rel="stylesheet" href="/scss/journal.min.c5d92f380bf10f6849c7ac487c7df2b22c081e0851e5339224f1ae29210b20d2.css" integrity="sha256-xdkvOAvxD2hJx6xIfH3ysiwIHghR5TOSJPGuKSELINI=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.9f8d8c2df9285089d141edd4a50cb7506c7948e6ab79a29968dced1bd0ab7d22.css" integrity="sha256-n42MLfkoUInRQe3UpQy3UGx5SOareaKZaNztG9CrfSI=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="/vendor/js/md5.min.js"></script><script>
+  var gitalk = new Gitalk({
+  clientID: '9b6e2c60298010f8886d',
+  clientSecret: 'ceddaafab5d65f02a83f3a2228b447fd502ac1fd',
+  repo: 'git@github.com:sam33339999\/hugo-site.git',
+  owner: 'sam33339999',
+  admin: ['sam33339999'],
+  id: md5(location.pathname),
+  distractionFreeMode: 'false'
+  });
+  window.onload = function () {
+        gitalk.render('gitalk-container')
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://sam33339999.github.io/">
+    
+        <div class="nav-title">
+            SC Site
+        </div>
+        
+        <div class="nav-subtitle">
+            With Learn.
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                Posts
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                Categories
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                Tags
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2022 SC Site
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目錄 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%ad%b7%e5%8f%b2%e8%83%8c%e6%99%af" onclick="onNavClick(`#歷史背景-nav`)" id="歷史背景-nav">
+									歷史背景
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%bb%b6%e4%bc%b8%e9%96%b1%e8%ae%80" onclick="onNavClick(`#延伸閱讀-nav`)" id="延伸閱讀-nav">
+									延伸閱讀
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e8%a3%9d" onclick="onNavClick(`#安裝-nav`)" id="安裝-nav">
+									安裝
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%ae%98%e6%96%b9%e7%b6%b2%e7%ab%99%e5%ae%89%e8%a3%9d%e6%96%b9%e6%b3%95" onclick="onNavClick(`#官方網站安裝方法-nav`)" id="官方網站安裝方法-nav">
+									官方網站、安裝方法
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e8%a3%9d-java" onclick="onNavClick(`#安裝-java-nav`)" id="安裝-java-nav">
+									安裝 Java
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%b8%8b%e8%bc%89-kafka-%e8%a7%a3%e5%a3%93-kafka" onclick="onNavClick(`#下載-kafka-解壓-kafka-nav`)" id="下載-kafka-解壓-kafka-nav">
+									下載 Kafka, 解壓 Kafka
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%83%e8%80%83" onclick="onNavClick(`#參考-nav`)" id="參考-nav">
+									參考:
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+<div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    Posts
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    Categories
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    Tags
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目錄 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%ad%b7%e5%8f%b2%e8%83%8c%e6%99%af" onclick="onNavClick(`#歷史背景-nav`)" id="歷史背景-nav">
+									歷史背景
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%bb%b6%e4%bc%b8%e9%96%b1%e8%ae%80" onclick="onNavClick(`#延伸閱讀-nav`)" id="延伸閱讀-nav">
+									延伸閱讀
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e8%a3%9d" onclick="onNavClick(`#安裝-nav`)" id="安裝-nav">
+									安裝
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%ae%98%e6%96%b9%e7%b6%b2%e7%ab%99%e5%ae%89%e8%a3%9d%e6%96%b9%e6%b3%95" onclick="onNavClick(`#官方網站安裝方法-nav`)" id="官方網站安裝方法-nav">
+									官方網站、安裝方法
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e8%a3%9d-java" onclick="onNavClick(`#安裝-java-nav`)" id="安裝-java-nav">
+									安裝 Java
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%b8%8b%e8%bc%89-kafka-%e8%a7%a3%e5%a3%93-kafka" onclick="onNavClick(`#下載-kafka-解壓-kafka-nav`)" id="下載-kafka-解壓-kafka-nav">
+									下載 Kafka, 解壓 Kafka
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%83%e8%80%83" onclick="onNavClick(`#參考-nav`)" id="參考-nav">
+									參考:
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://sam33339999.github.io/">
+            SC Site
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://sam33339999.github.io/">
+        <div class="single-column-header-title">SC Site</div>
+        
+        <div class="single-column-header-subtitle">With Learn.</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Kafka - 1
+                    
+                    <div class="post-subtitle">
+                        kafka 筆記
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2022-11-29 01:51
+                        </time>
+                        
+
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/mq">MQ</a>
+                                &nbsp;
+                            
+                                <a href="/tags/kafka">Kafka</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h1 id="歷史背景">歷史背景</h1>
+<p>LinkedIn 開發的 MQ 相關軟體。 基於 <code>Java</code> ，舊版本中依賴於 <code>ZooKeeper</code></p>
+<blockquote>
+<p>在 <code>2.8</code> 版 (Early Access Release) 版本開始允許不使用 <code>ZooKeeper</code> (KRaft mode)，
+變成內建應用完成對 Zookeeper 的解依賴。</p>
+</blockquote>
+<h2 id="延伸閱讀">延伸閱讀</h2>
+<p><a href="https://www.ithome.com.tw/news/146866">Apache Kafka 3.0.0持續更新共識機制KRaft，並著手清理舊支援與設定</a></p>
+<blockquote>
+<p>KRaft 為共識算法。 以往 ZooKeeper 在 Kafka 中扮演協調代理的角色，當代理服務器啟動時，
+需要向 ZooKeeper 註冊，並由 ZooKeeper 管理代理狀態，協助代理間溝通的資訊同步，因此過去 Kafka 需依賴 ZooKeeper 才能運作。</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h1 id="安裝">安裝</h1>
+<h2 id="官方網站安裝方法">官方網站、安裝方法</h2>
+<ul>
+<li><a href="https://kafka.apache.org/">Official</a> 官方網站</li>
+<li><a href="https://kafka.apache.org/downloads">Download</a> 下載點</li>
+<li><a href="https://sdkman.io">SDKMAN</a> 用於下載 JDK 工具</li>
+</ul>
+<h3 id="安裝-java">安裝 Java</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 安裝 SDK MAN</span>
+</span></span><span style="display:flex;"><span>curl -s <span style="color:#e6db74">&#34;https://get.sdkman.io&#34;</span> | bash
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 使用 SDK MAN - 若發生 command not found 請確認自己的 environment path 有無設定了</span>
+</span></span><span style="display:flex;"><span>sdk list java
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#================================================================================</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Available Java Versions for Linux ARM 64bit</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#================================================================================</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Vendor        | Use | Version      | Dist    | Status     | Identifier</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#--------------------------------------------------------------------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># AdoptOpenJDK  | &gt;&gt;&gt; | 8.0.275 1.hs | adpt    | local only | 8.0.275 1.hs-adpt</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#               |     | 8.0.275+1.hs | adpt    |            | 8.0.275+1.hs-adpt</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#               |     | 8.0.252.hs   | adpt    |            | 8.0.252.hs-adpt</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Corretto      |     | 19           | amzn    |            | 19-amzn</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#               |     | 19.0.1       | amzn    |            | 19.0.1-amzn</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#               |     | 17.0.5       | amzn    |            | 17.0.5-amzn</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#               |     | 17.0.4       | amzn    |            | 17.0.4-amzn</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#               |     | 11.0.17      | amzn    |            | 11.0.17-amzn</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#               |     | 11.0.16      | amzn    |            | 11.0.16-amzn</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#               |     | 8.0.352      | amzn    |            | 8.0.352-amzn</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#               |     | 8.0.342      | amzn    |            | 8.0.342-amzn</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Dragonwell    |     | 17.0.5       | albba   |            | 17.0.5-albba</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#               |     | 17.0.4       | albba   |            | 17.0.4-albba</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#               |     | 11.0.17      | albba   |            | 11.0.17-albba</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ...etc...</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 上述為下完 sdk list java 後的結果，最右邊的欄位是代表著他的辨識版本，安裝時需要使用該欄位</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 這個命令為範例，安裝 AdoptOpenJDK 的 8.0.252.hs</span>
+</span></span><span style="display:flex;"><span>sdk install java 8.0.252.hs-adpt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 切換當前環境使用的 JDK</span>
+</span></span><span style="display:flex;"><span>sdk use java java 8.0.252.hs-adpt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 指令預設的 JDK 版本</span>
+</span></span><span style="display:flex;"><span>sdk default java 8.0.252.hs-adpt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 取得目前的 JDK 版本</span>
+</span></span><span style="display:flex;"><span>sdk current java
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 確認環境內是否已經存在 java 了</span>
+</span></span><span style="display:flex;"><span>javac -version
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="下載-kafka-解壓-kafka">下載 Kafka, 解壓 Kafka</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://downloads.apache.org/kafka/3.3.1/kafka_2.13-3.3.1.tgz
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tar zxvf kafka_2.13-3.3.1.tgz
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo mv kafka_2.13-3.3.1 /opt/kafka
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># append to .bashrc -&gt; PATH</span>
+</span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>$PATH:/opt/kafka/bin
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="參考">參考:</h3>
+<ul>
+<li><a href="https://ithelp.ithome.com.tw/articles/10236086">第三天：安裝/管理多個版本的 JDK</a></li>
+<li><a href="https://www.ltsplus.com/linux/linux-unpack-tgz">Linux 壓縮及解壓 .tgz 及 .tar.gz 檔</a></li>
+</ul>
+<hr>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">上次修改於 2022-11-29</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/posts/2022/12/swoole-cli/">
+			下回<br>Swoole Cli
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/posts/2022/11/get-started-hugo/">
+			上回<br>Get Started Hugo
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+<div id="gitalk-container"></div>
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2022 SC Site
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>

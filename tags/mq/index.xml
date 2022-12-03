@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 29 Nov 2022 01:51:22 +0800</lastBuildDate><atom:link href="https://sam33339999.github.io/tags/mq/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Kafka - 1</title>
-      <link>https://sam33339999.github.io/posts/2022/11/kafka/</link>
+      <link>https://sam33339999.github.io/posts/2022/11/kafka_1/</link>
       <pubDate>Tue, 29 Nov 2022 01:51:22 +0800</pubDate>
       
-      <guid>https://sam33339999.github.io/posts/2022/11/kafka/</guid>
+      <guid>https://sam33339999.github.io/posts/2022/11/kafka_1/</guid>
       <description>歷史背景 LinkedIn 開發的 MQ 相關軟體。 基於 Java ，舊版本中依賴於 ZooKeeper
 在 2.8 版 (Early Access Release) 版本開始允許不使用 ZooKeeper (KRaft mode)， 變成內建應用完成對 Zookeeper 的解依賴。
 延伸閱讀 Apache Kafka 3.0.0持續更新共識機制KRaft，並著手清理舊支援與設定
