@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html><head>
+<title>PHP Swoole Workshop</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+
+
+
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GW4JPQ1TD8"></script>
+
+<script>
+
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('js', new Date());
+
+ 
+  gtag('config', 'G-GW4JPQ1TD8');
+
+</script>
+
+
+
+
+
+  
+
+
+
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<link rel="stylesheet" href="/scss/journal.min.c5d92f380bf10f6849c7ac487c7df2b22c081e0851e5339224f1ae29210b20d2.css" integrity="sha256-xdkvOAvxD2hJx6xIfH3ysiwIHghR5TOSJPGuKSELINI=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.9f8d8c2df9285089d141edd4a50cb7506c7948e6ab79a29968dced1bd0ab7d22.css" integrity="sha256-n42MLfkoUInRQe3UpQy3UGx5SOareaKZaNztG9CrfSI=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="/vendor/js/md5.min.js"></script><script>
+  var gitalk = new Gitalk({
+  clientID: '9b6e2c60298010f8886d',
+  clientSecret: 'ceddaafab5d65f02a83f3a2228b447fd502ac1fd',
+  repo: 'git@github.com:sam33339999\/hugo-site.git',
+  owner: 'sam33339999',
+  admin: ['sam33339999'],
+  id: md5(location.pathname),
+  distractionFreeMode: 'false'
+  });
+  window.onload = function () {
+        gitalk.render('gitalk-container')
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://sam33339999.github.io/">
+    
+        <div class="nav-title">
+            SC Site
+        </div>
+        
+        <div class="nav-subtitle">
+            With Learn.
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                Posts
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                Categories
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                Tags
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2022 SC Site
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目錄 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#php-swoole-%e5%b7%a5%e4%bd%9c%e5%9d%8a" onclick="onNavClick(`#php-swoole-工作坊-nav`)" id="php-swoole-工作坊-nav">
+									PHP Swoole 工作坊
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e8%ac%9b%e8%80%85-albert-chen" onclick="onNavClick(`#講者-albert-chen-nav`)" id="講者-albert-chen-nav">
+									講者 Albert Chen
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#in-swoole-workshop-2022-repo" onclick="onNavClick(`#in-swoole-workshop-2022-repo-nav`)" id="in-swoole-workshop-2022-repo-nav">
+									In swoole-workshop-2022 Repo
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#3-coroutine" onclick="onNavClick(`#3-coroutine-nav`)" id="3-coroutine-nav">
+									3-coroutine
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#benchmark-with-1swoole-server-in-apple-m2--24gb-mbp" onclick="onNavClick(`#benchmark-with-1swoole-server-in-apple-m2--24gb-mbp-nav`)" id="benchmark-with-1swoole-server-in-apple-m2--24gb-mbp-nav">
+									Benchmark with 1.swoole-server in Apple M2 / 24GB mbp
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#swoole-%e7%b0%a1%e4%bb%8b" onclick="onNavClick(`#swoole-簡介-nav`)" id="swoole-簡介-nav">
+									swoole 簡介
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#swoole-server-mode" onclick="onNavClick(`#swoole-server-mode-nav`)" id="swoole-server-mode-nav">
+									swoole server mode
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%aa%aa%e6%98%8e" onclick="onNavClick(`#說明-nav`)" id="說明-nav">
+									說明
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%82%ba%e4%bb%80%e9%ba%bc-php-%e6%85%a2" onclick="onNavClick(`#為什麼-php-慢-nav`)" id="為什麼-php-慢-nav">
+									為什麼 PHP 慢？
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%b6%b2%e8%b7%af%e6%a8%a1%e5%9e%8b-http-%e4%b9%9f%e6%98%af%e5%9f%ba%e6%96%bc-tcp-%e6%a8%a1%e5%9e%8b" onclick="onNavClick(`#網路模型-http-也是基於-tcp-模型-nav`)" id="網路模型-http-也是基於-tcp-模型-nav">
+									網路模型， Http 也是基於 TCP 模型。
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#task-worker" onclick="onNavClick(`#task-worker-nav`)" id="task-worker-nav">
+									Task Worker
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#with-browser--keep-alive" onclick="onNavClick(`#with-browser--keep-alive-nav`)" id="with-browser--keep-alive-nav">
+									with browser =&gt; keep-alive
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#coroutine" onclick="onNavClick(`#coroutine-nav`)" id="coroutine-nav">
+									coroutine
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+<div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    Posts
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    Categories
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    Tags
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目錄 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#php-swoole-%e5%b7%a5%e4%bd%9c%e5%9d%8a" onclick="onNavClick(`#php-swoole-工作坊-nav`)" id="php-swoole-工作坊-nav">
+									PHP Swoole 工作坊
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e8%ac%9b%e8%80%85-albert-chen" onclick="onNavClick(`#講者-albert-chen-nav`)" id="講者-albert-chen-nav">
+									講者 Albert Chen
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#in-swoole-workshop-2022-repo" onclick="onNavClick(`#in-swoole-workshop-2022-repo-nav`)" id="in-swoole-workshop-2022-repo-nav">
+									In swoole-workshop-2022 Repo
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#3-coroutine" onclick="onNavClick(`#3-coroutine-nav`)" id="3-coroutine-nav">
+									3-coroutine
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#benchmark-with-1swoole-server-in-apple-m2--24gb-mbp" onclick="onNavClick(`#benchmark-with-1swoole-server-in-apple-m2--24gb-mbp-nav`)" id="benchmark-with-1swoole-server-in-apple-m2--24gb-mbp-nav">
+									Benchmark with 1.swoole-server in Apple M2 / 24GB mbp
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#swoole-%e7%b0%a1%e4%bb%8b" onclick="onNavClick(`#swoole-簡介-nav`)" id="swoole-簡介-nav">
+									swoole 簡介
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#swoole-server-mode" onclick="onNavClick(`#swoole-server-mode-nav`)" id="swoole-server-mode-nav">
+									swoole server mode
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%aa%aa%e6%98%8e" onclick="onNavClick(`#說明-nav`)" id="說明-nav">
+									說明
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%82%ba%e4%bb%80%e9%ba%bc-php-%e6%85%a2" onclick="onNavClick(`#為什麼-php-慢-nav`)" id="為什麼-php-慢-nav">
+									為什麼 PHP 慢？
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%b6%b2%e8%b7%af%e6%a8%a1%e5%9e%8b-http-%e4%b9%9f%e6%98%af%e5%9f%ba%e6%96%bc-tcp-%e6%a8%a1%e5%9e%8b" onclick="onNavClick(`#網路模型-http-也是基於-tcp-模型-nav`)" id="網路模型-http-也是基於-tcp-模型-nav">
+									網路模型， Http 也是基於 TCP 模型。
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#task-worker" onclick="onNavClick(`#task-worker-nav`)" id="task-worker-nav">
+									Task Worker
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#with-browser--keep-alive" onclick="onNavClick(`#with-browser--keep-alive-nav`)" id="with-browser--keep-alive-nav">
+									with browser =&gt; keep-alive
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#coroutine" onclick="onNavClick(`#coroutine-nav`)" id="coroutine-nav">
+									coroutine
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://sam33339999.github.io/">
+            SC Site
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://sam33339999.github.io/">
+        <div class="single-column-header-title">SC Site</div>
+        
+        <div class="single-column-header-subtitle">With Learn.</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    PHP Swoole Workshop
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2022-12-03 00:11
+                        </time>
+                        
+
+                        
+
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h1 id="php-swoole-工作坊">PHP Swoole 工作坊</h1>
+<h2 id="講者-albert-chen">講者 Albert Chen</h2>
+<ul>
+<li><a href="https://github.com/albertcht">Github</a></li>
+<li><a href="https://github.com/albertcht/swoole-workshop-2022">Use-Github-Repository: swoole-workshop-2022</a></li>
+</ul>
+<h2 id="in-swoole-workshop-2022-repo">In <code>swoole-workshop-2022</code> Repo</h2>
+<ul>
+<li>1-swoole-server:
+<ul>
+<li>建立一個簡易的 server -&gt; Go, node.js, Swoole 比較。</li>
+<li><code>TCP</code>, <code>WebSocket</code>, <code>HTTP2</code> simple code</li>
+</ul>
+</li>
+<li>2-memory
+<ul>
+<li>CacheInterface.php 快取接口</li>
+<li>atomic_counter.php</li>
+<li>cache_server.php (CacheInterface.php, 實踐所需要的CacheTtl.php)</li>
+<li>counter.php</li>
+<li>table.php (\swoole\table class)</li>
+</ul>
+</li>
+<li>
+<h2 id="3-coroutine">3-coroutine</h2>
+</li>
+<li>4-laravel-octane (基於 Swoole 去將 Laravel 加速)</li>
+</ul>
+<hr>
+<h2 id="benchmark-with-1swoole-server-in-apple-m2--24gb-mbp">Benchmark with <code>1.swoole-server</code> in Apple M2 / 24GB mbp</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e">## Swoole</span>
+</span></span><span style="display:flex;"><span>➜  swoole-workshop-2022 git:<span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> ✗ wrk -c <span style="color:#ae81ff">100</span> -t <span style="color:#ae81ff">4</span> http://127.0.0.1:9501
+</span></span><span style="display:flex;"><span>Running 10s test @ http://127.0.0.1:9501
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">4</span> threads and <span style="color:#ae81ff">100</span> connections
+</span></span><span style="display:flex;"><span>  Thread Stats   Avg      Stdev     Max   +/- Stdev
+</span></span><span style="display:flex;"><span>    Latency   816.17us  101.39us   4.36ms   98.36%
+</span></span><span style="display:flex;"><span>    Req/Sec    30.73k   747.00    31.72k    88.00%
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">1223095</span> requests in 10.00s, 193.63MB read
+</span></span><span style="display:flex;"><span>Requests/sec: 122289.63
+</span></span><span style="display:flex;"><span>Transfer/sec:     19.36MB
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Golang</span>
+</span></span><span style="display:flex;"><span>➜  swoole-workshop-2022 git:<span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> ✗ wrk -c <span style="color:#ae81ff">100</span> -t <span style="color:#ae81ff">4</span> http://127.0.0.1:9501
+</span></span><span style="display:flex;"><span>Running 10s test @ http://127.0.0.1:9501
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">4</span> threads and <span style="color:#ae81ff">100</span> connections
+</span></span><span style="display:flex;"><span>  Thread Stats   Avg      Stdev     Max   +/- Stdev
+</span></span><span style="display:flex;"><span>    Latency     0.90ms    1.64ms  23.09ms   87.80%
+</span></span><span style="display:flex;"><span>    Req/Sec    53.70k    46.72k  205.41k    69.60%
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">2143381</span> requests in 10.09s, 222.81MB read
+</span></span><span style="display:flex;"><span>Requests/sec: 212484.68
+</span></span><span style="display:flex;"><span>Transfer/sec:     22.09MB
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># node.JS</span>
+</span></span><span style="display:flex;"><span>➜  swoole-workshop-2022 git:<span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> ✗ wrk -c <span style="color:#ae81ff">100</span> -t <span style="color:#ae81ff">4</span> http://127.0.0.1:9501
+</span></span><span style="display:flex;"><span>Running 10s test @ http://127.0.0.1:9501
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">4</span> threads and <span style="color:#ae81ff">100</span> connections
+</span></span><span style="display:flex;"><span>  Thread Stats   Avg      Stdev     Max   +/- Stdev
+</span></span><span style="display:flex;"><span>    Latency     1.20ms  793.27us  35.35ms   98.85%
+</span></span><span style="display:flex;"><span>    Req/Sec    21.55k     1.44k   22.34k    98.02%
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">866231</span> requests in 10.10s, 148.70MB read
+</span></span><span style="display:flex;"><span>Requests/sec:  85754.35
+</span></span><span style="display:flex;"><span>Transfer/sec:     14.72MB
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<blockquote>
+<p>為什麼還需要 Swoole Table 的存在，不是已經有 Redis 存在了嗎？ answer: 由於存取 redis 也是一個耗損，並且如果單存小資料的話，直接存於內存相對快。(多級快取的概念)</p>
+</blockquote>
+<p><a href="https://github.com/swoole/swoole-src/blob/master/ext-src/swoole_server.cc#L50">swoole-on-type</a></p>
+<h2 id="swoole-簡介">swoole 簡介</h2>
+<p>基於 <code>Zend VM</code> 去撰寫的擴充、拓展 (extension)，使得 PHP 能夠擁抱現今眾多的新特性&hellip; 如: <code>異步 I/O</code>， <code>協程</code>， <code>多執行緒</code>。</p>
+<ul>
+<li>swoole v4.* 實現了 <code>coroutine (async)</code></li>
+<li>swoole v5.* <code>goroutine</code></li>
+</ul>
+<h3 id="swoole-server-mode">swoole server mode</h3>
+<ul>
+<li>Base Mode -&gt; 囤積請求的感覺，因為沒有上層的進程保護，故若是程序死掉，囤積得請求會一併的遺失。（由於無保護，故速度會快一些）</li>
+<li>Process Mode -&gt; 有上層保護，故丟失請求的機率會降低</li>
+</ul>
+<h3 id="說明">說明</h3>
+<ul>
+<li>PHP - 實現 SAPI (System API) -&gt; 來去使 Zend VM 與操作系統達成對應的事務。</li>
+<li>PHP script 將透過 PHP Zend VM 去執行。
+<ul>
+<li>由於多了 Zend VM 去執行，故才可以使用同一套 script 達成多系統間使用同腳本執行</li>
+</ul>
+</li>
+</ul>
+<h3 id="為什麼-php-慢">為什麼 PHP 慢？</h3>
+<ul>
+<li>Blocking I/O -&gt; 阻塞 I/O
+<ul>
+<li>實踐相對簡單</li>
+</ul>
+</li>
+<li>Stateless -&gt; 無狀態
+<ul>
+<li>由於無狀態，因此多數 PHPer 會在開發的當下可能忽略了 <code>memory leak</code> 的問題</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="網路模型-http-也是基於-tcp-模型">網路模型， Http 也是基於 TCP 模型。</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$server <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Swoole\HTTP\Server</span>(<span style="color:#e6db74">&#39;0.0.0.0&#39;</span>, <span style="color:#ae81ff">9501</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$server<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;request&#39;</span>, <span style="color:#66d9ef">function</span> ($request, $response) {
+</span></span><span style="display:flex;"><span>    $response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">end</span>(<span style="color:#e6db74">&#39;Hello Swoole!&#39;</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<p>網路模型，Http 也是基於 TCP 模型，由上述例子中，我們針對 <code>request</code> 去做他的 handler ，並且回傳一個字串 Hello Swoole!。 那麼；為什麼沒有寫出其他的狀態的 function，原因為我們 web 開發者比較會專注於 request 去做對應的處理</p>
+<p>如果我們想要增加其他屬性也可以，會長得像下列那樣；增加了 連線時的 handler；從這個東西可以去 trace 一些東西。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$server <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Swoole\HTTP\Server</span>(<span style="color:#e6db74">&#39;0.0.0.0&#39;</span>, <span style="color:#ae81ff">9501</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$server<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;Connect&#39;</span>, <span style="color:#66d9ef">function</span> ($server, $fd) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Client: Connect.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$server<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;request&#39;</span>, <span style="color:#66d9ef">function</span> ($request, $response) {
+</span></span><span style="display:flex;"><span>    $response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">end</span>(<span style="color:#e6db74">&#39;Hello Swoole!&#39;</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>? 心跳檢查會檢查自己嗎</p>
+</blockquote>
+<h2 id="task-worker">Task Worker</h2>
+<ul>
+<li>task worker</li>
+<li>task finish</li>
+</ul>
+<h3 id="with-browser--keep-alive">with <code>browser =&gt; keep-alive</code></h3>
+<blockquote>
+<p>同樣 keep alive 同一個 worker</p>
+</blockquote>
+<p>cow  -&gt; <a href="https://hackmd.io/@linD026/Linux-kernel-COW-Copy-on-Write">copy on write</a>
+更底層 memory share -&gt; cache</p>
+<h1 id="coroutine">coroutine</h1>
+<p>? in <code>run</code> function is block</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a6e22e">Runtime</span><span style="color:#f92672">::</span><span style="color:#a6e22e">enableCoroutine</span>(<span style="color:#66d9ef">false</span>);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>monkey patch</li>
+<li>hook pointer change</li>
+</ul>
+<p>協程 不等於 async io</p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">上次修改於 2022-12-03</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts">
+			下回<br>已經到底啦。
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/posts/2022/12/php-closure-anonymous/">
+			上回<br>PHP Closure Anonymous
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+<div id="gitalk-container"></div>
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2022 SC Site
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>
