@@ -13,7 +13,7 @@
       <pubDate>Sat, 03 Dec 2022 22:13:33 +0800</pubDate>
       
       <guid>https://sam33339999.github.io/posts/2022/12/phpmicro/</guid>
-      <description>phpmicro repo repo-wiki oschina 相關文章 依賴項目 1 2 3 4 5 6 7 8 9 10 11 12 bison -&amp;gt; v3 以上 https://www.gnu.org/software/bison/ # 需要下載回來自行 compile ； # 編譯完後，記得將 ./data 資料移動入 /usr/local/share/bison/下。 # 此時你的文件下應該會有 bison 需要的檔案 # ➜ pwd # /usr/local/share/bison # ➜ ls # m4sugar skeletons xslt brew install re2c brew install pkg-config 編譯: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 # 先 clone 回 php-src 選定你要的版本。 git clone git@github.</description>
+      <description>phpmicro repo repo-wiki oschina 相關文章 有趣的應用 box dixyes 專案推動者 簡介： 在這個專案中，主要讓 PHP 產生二進制檔案，面對遷移性而言會使得方便許多。並且產生的檔案不會依賴於作業系統上的 PHP，簡言之，就是系統即使沒有 PHP 也能夠被執行。 在 phpmicro 這個專案，會使作業系統產生 micro.sfx 的檔案；並且這個檔案使用拼接的方式，讓 php script 拼接在該檔案後面，產生 二進制檔案。 依賴項目 1 2 3 4 5 6 7 8 9 10 11 12 bison -&amp;gt; v3 以上 https://www.gnu.org/software/bison/ # 需要下載回來自行 compile ； # 編譯完後，記得將 ./data 資料移動入 /usr/local/share/bison/下。 # 此時你的文件下應該會有 bison 需要的檔案 # ➜ pwd # /usr/local/share/bison # ➜ ls # m4sugar skeletons xslt brew install re2c brew install pkg-config 編譯: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 # 先 clone 回 php-src 選定你要的版本。 git clone git@github.</description>
     </item>
     
     <item>
@@ -32,7 +32,7 @@
       
       <guid>https://sam33339999.github.io/posts/2022/12/php-closure-anonymous/</guid>
       <description>PHP Closure Anonymous PHP 閉包匿名類 匿名類別繼承，且 __construct() 初始化匿名函數
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 class TestAnonymous { public function __construct( protected string $name ) { /** PHP 8 Syntax, With Construct initial attributes */ } public function hello(): void { echo &amp;#34;Hello world - {$this-&amp;gt;name} \n&amp;#34;; } public function helloWithAnonymous() { $newClass = new Class(&amp;#39;Sunny&amp;#39;) extends TestAnonymous { public function hello(): void { parent::hello(); echo &amp;#34;Hello John - {$this-&amp;gt;name} \n&amp;#34;; } }; // 這裡記得要有分號。 $newClass-&amp;gt;hello(); } } $ta = new TestAnonymous(&amp;#39;Sam&amp;#39;); $ta-&amp;gt;hello(); $ta-&amp;gt;helloWithAnonymous(); </description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 class TestAnonymous { public function __construct( protected string $name ) { /** PHP 8 Syntax, With Construct initial attributes */ } public function hello(): void { echo &amp;#34;Hello world - {$this-&amp;gt;name} \n&amp;#34;; } public function helloWithAnonymous() { $newClass = new Class(&amp;#39;Sunny&amp;#39;) extends TestAnonymous { public function hello(): void { parent::hello(); echo &amp;#34;Hello John - {$this-&amp;gt;name} \n&amp;#34;; } }; // 這裡記得要有分號。 $newClass-&amp;gt;hello(); } } $ta = new TestAnonymous(&amp;#39;Sam&amp;#39;); $ta-&amp;gt;hello(); $ta-&amp;gt;helloWithAnonymous(); result: 1 2 3 Hello world - Sam Hello world - Sunny Hello John - Sunny </description>
     </item>
     
     <item>

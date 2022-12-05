@@ -71,23 +71,6 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script src="/vendor/js/md5.min.js"></script><script>
-  var gitalk = new Gitalk({
-  clientID: '9b6e2c60298010f8886d',
-  clientSecret: 'ceddaafab5d65f02a83f3a2228b447fd502ac1fd',
-  repo: 'git@github.com:sam33339999\/hugo-site.git',
-  owner: 'sam33339999',
-  admin: ['sam33339999'],
-  id: md5(location.pathname),
-  distractionFreeMode: 'false'
-  });
-  window.onload = function () {
-        gitalk.render('gitalk-container')
-  }
-</script>
-
 
 
 
@@ -217,6 +200,24 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
+								<a href="#%e7%b0%a1%e4%bb%8b" onclick="onNavClick(`#簡介-nav`)" id="簡介-nav">
+									簡介：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
 								<a href="#%e4%be%9d%e8%b3%b4%e9%a0%85%e7%9b%ae" onclick="onNavClick(`#依賴項目-nav`)" id="依賴項目-nav">
 									依賴項目
 								</a>
@@ -295,8 +296,8 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e6%bc%94%e8%ac%9b%e4%b8%ad%e6%8f%90%e5%88%b0%e5%a6%82%e4%bd%95-self-update-%e7%9a%84%e6%96%b9%e6%b3%95" onclick="onNavClick(`#演講中提到如何-self-update-的方法-nav`)" id="演講中提到如何-self-update-的方法-nav">
-									演講中提到如何 self-update 的方法。
+								<a href="#%e8%ad%b0%e7%a8%8b%e4%b8%ad%e6%8f%90%e5%88%b0%e5%a6%82%e4%bd%95-self-update-%e7%9a%84%e6%96%b9%e6%b3%95" onclick="onNavClick(`#議程中提到如何-self-update-的方法-nav`)" id="議程中提到如何-self-update-的方法-nav">
+									議程中提到如何 self-update 的方法。
 								</a>
 							</li>
 						
@@ -411,6 +412,24 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
+								<a href="#%e7%b0%a1%e4%bb%8b" onclick="onNavClick(`#簡介-nav`)" id="簡介-nav">
+									簡介：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
 								<a href="#%e4%be%9d%e8%b3%b4%e9%a0%85%e7%9b%ae" onclick="onNavClick(`#依賴項目-nav`)" id="依賴項目-nav">
 									依賴項目
 								</a>
@@ -489,8 +508,8 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e6%bc%94%e8%ac%9b%e4%b8%ad%e6%8f%90%e5%88%b0%e5%a6%82%e4%bd%95-self-update-%e7%9a%84%e6%96%b9%e6%b3%95" onclick="onNavClick(`#演講中提到如何-self-update-的方法-nav`)" id="演講中提到如何-self-update-的方法-nav">
-									演講中提到如何 self-update 的方法。
+								<a href="#%e8%ad%b0%e7%a8%8b%e4%b8%ad%e6%8f%90%e5%88%b0%e5%a6%82%e4%bd%95-self-update-%e7%9a%84%e6%96%b9%e6%b3%95" onclick="onNavClick(`#議程中提到如何-self-update-的方法-nav`)" id="議程中提到如何-self-update-的方法-nav">
+									議程中提到如何 self-update 的方法。
 								</a>
 							</li>
 						
@@ -585,7 +604,14 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 <li><a href="https://github.com/easysoft/phpmicro">repo</a></li>
 <li><a href="https://github.com/easysoft/phpmicro/wiki">repo-wiki</a></li>
 <li><a href="https://www.oschina.net/p/PHPMicro">oschina 相關文章</a></li>
+<li><a href="https://github.com/hyperf/box">有趣的應用 box</a></li>
+<li><a href="https://github.com/dixyes">dixyes 專案推動者</a></li>
 </ul>
+<h2 id="簡介">簡介：</h2>
+<ol>
+<li>在這個專案中，主要讓 PHP 產生二進制檔案，面對遷移性而言會使得方便許多。並且產生的檔案不會依賴於作業系統上的 PHP，簡言之，就是系統即使沒有 PHP 也能夠被執行。</li>
+<li>在 phpmicro 這個專案，會使作業系統產生 <code>micro.sfx</code> 的檔案；並且這個檔案使用拼接的方式，讓 php script 拼接在該檔案後面，產生  二進制檔案。</li>
+</ol>
 <h2 id="依賴項目">依賴項目</h2>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -708,7 +734,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># ./{my_application_name}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="演講中提到如何-self-update-的方法">演講中提到如何 self-update 的方法。</h3>
+</div><h3 id="議程中提到如何-self-update-的方法">議程中提到如何 self-update 的方法。</h3>
 <p><a href="https://github.com/easysoft/phpmicro/wiki/SAPI-interface-details">主要的 function</a></p>
 
                     
@@ -736,8 +762,6 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
             <div class="post-comment-wrapper">
                 
 
-
-<div id="gitalk-container"></div>
 
 
 
