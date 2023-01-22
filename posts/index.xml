@@ -6,14 +6,40 @@
     <description>Recent content in Posts on SC Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 03 Dec 2022 22:13:33 +0800</lastBuildDate><atom:link href="https://sam33339999.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 Jan 2023 17:53:05 +0800</lastBuildDate><atom:link href="https://sam33339999.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CSS: Flex</title>
+      <link>https://sam33339999.github.io/posts/2023/01/flex-grid/</link>
+      <pubDate>Sat, 21 Jan 2023 17:53:05 +0800</pubDate>
+      
+      <guid>https://sam33339999.github.io/posts/2023/01/flex-grid/</guid>
+      <description>Flex vs Grid Flex box 常用於小規模佈局； Grid layout則適合大規模佈局。
+Flex box 是單向度的排版。 Grid 則是包含 X, Y 軸的平面排版方式。 如果想要簡單輕便的實現單一軸向的自適應排版(RWD)，例如 導覽列, 卡片式排版, 相簿 等&amp;hellip; 可以選擇使用 Flexbox
+如果你想要快速實現雙軸平面式，甚至不規則的排版（像 平面設計排版 那樣的自由) 那麼使用 Grid layout 會更適合也更快速。
+Flexbox 簡介 Flexbox layout 是基於 display: flex 或是 display: inline-flex 的語法， 以單向主軸或交叉軸為方向的排版。
+這個語法透過 flex-flow 的各項數值能輕易的實現適應式排版， flex-flow 能決定排版以實際物理的方向 (上/右/下/左)、 直行或橫列排版 ( row / column ) 以及 Flex item 遇到 Flex Container 的寬度極限時，超出或是換行排列。 flex 規定元素如何伸長或縮短以適應 flex 容器中的可用空間。
+flex 外元素 主軸 Main Axis 與 交叉軸 Cross Axis -&amp;gt; 如何定義 主軸與交叉軸 -&amp;gt; 會跟據 flex-direction 的流向，才去了解當下的主軸、交叉軸是 左至右｜ 右至左｜ 上至下｜ 下至上</description>
+    </item>
+    
+    <item>
+      <title>Nginx PlayGround</title>
+      <link>https://sam33339999.github.io/posts/2023/01/nginx_playground/</link>
+      <pubDate>Sat, 21 Jan 2023 12:23:01 +0800</pubDate>
+      
+      <guid>https://sam33339999.github.io/posts/2023/01/nginx_playground/</guid>
+      <description>Nginx playground new-tool&amp;ndash;an-nginx-playground from Sandbox for nginx 另外一個 playground build with Golang
+原理： FE: 使用 vue.js, tailwind BE: API Endpoint -&amp;gt; 去對 nginx 做配置。 完整程式碼： link
+當點擊 run 時候，Go 後端會執行以下操作:
+將配置檔寫入一個臨時檔 創建一個新的網路命名空間 (ip netns add $RANDOM_NAMESPACE_NAME) gist 在 port: 7777 啟動 go-httpbin，以便可以在 nginx 配置中使用作為他的 backend 啟動 nginx 等待 100ms 以確保 nginx 啟動完成，如果失敗則將 nginx 的錯誤日誌返回給前端 執行用戶請求命令(並確保命令以 curl 或開頭 http) 返回命令輸出 完成 延伸: ip netns (ip network namespace) 是 Linux 用來管理網路命名空間的工具，他可以用來創建、刪除、查看和管理網路命名空間。 網路命名空間是一種 Linux 的內核功能。</description>
+    </item>
+    
     <item>
       <title>phpmicro</title>
       <link>https://sam33339999.github.io/posts/2022/12/phpmicro/</link>
       <pubDate>Sat, 03 Dec 2022 22:13:33 +0800</pubDate>
       
       <guid>https://sam33339999.github.io/posts/2022/12/phpmicro/</guid>
-      <description>phpmicro repo repo-wiki oschina 相關文章 有趣的應用 box dixyes 專案推動者 簡介： 在這個專案中，主要讓 PHP 產生二進制檔案，面對遷移性而言會使得方便許多。並且產生的檔案不會依賴於作業系統上的 PHP，簡言之，就是系統即使沒有 PHP 也能夠被執行。 在 phpmicro 這個專案，會使作業系統產生 micro.sfx 的檔案；並且這個檔案使用拼接的方式，讓 php script 拼接在該檔案後面，產生 二進制檔案。 依賴項目 1 2 3 4 5 6 7 8 9 10 11 12 bison -&amp;gt; v3 以上 https://www.gnu.org/software/bison/ # 需要下載回來自行 compile ； # 編譯完後，記得將 ./data 資料移動入 /usr/local/share/bison/下。 # 此時你的文件下應該會有 bison 需要的檔案 # ➜ pwd # /usr/local/share/bison # ➜ ls # m4sugar skeletons xslt brew install re2c brew install pkg-config 編譯: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 # 先 clone 回 php-src 選定你要的版本。 git clone git@github.</description>
+      <description>phpmicro repo repo-wiki oschina 相關文章 有趣的應用 box dixyes 專案推動者 GUI 產生 phpmicro 設定檔 簡介： 在這個專案中，主要讓 PHP 產生二進制檔案，面對遷移性而言會使得方便許多。並且產生的檔案不會依賴於作業系統上的 PHP，簡言之，就是系統即使沒有 PHP 也能夠被執行。 在 phpmicro 這個專案，會使作業系統產生 micro.sfx 的檔案；並且這個檔案使用拼接的方式，讓 php script 拼接在該檔案後面，產生 二進制檔案。 依賴項目 1 2 3 4 5 6 7 8 9 10 11 12 bison -&amp;gt; v3 以上 https://www.gnu.org/software/bison/ # 需要下載回來自行 compile ； # 編譯完後，記得將 ./data 資料移動入 /usr/local/share/bison/下。 # 此時你的文件下應該會有 bison 需要的檔案 # ➜ pwd # /usr/local/share/bison # ➜ ls # m4sugar skeletons xslt brew install re2c brew install pkg-config 編譯: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 # 先 clone 回 php-src 選定你要的版本。 git clone git@github.</description>
     </item>
     
     <item>
